@@ -13,28 +13,23 @@ str, решить поставленную задачу? Функция долж
 '''
 import requests
 
-def currency_rates():
+def currency_rates(currency):
     req_answer = requests.get('http://www.cbr.ru/scripts/XML_daily.asp')
     sym = ['<', '>', '"', '?', '=', '/', "'"]
     inform_content = str(req_answer.content)
-    print(inform_content)
     a = len(inform_content)
     for i in range(a):
         for j in range(len(sym)):
-            inform_content = inform_content.replace(sym[j], ' ')
-    print(inform_content)
+            inform_content = inform_content.replace(sym[j], '  ')
     massive = inform_content.split()
-    print(massive)
-    exchange = dict(Date=massive[8])
-    # k = 0
-    # while k < len(massive):
-    #     k +=1
-    #     exchange = dict(Date = massive[k])
-    #     if k == len(massive) - 1:
-    #         break
+    exchange = dict(Date=massive[massive.index('Date') + 1])
+    currency_massiv = massive[massive.index(currency): - 1]
+    exchange[currency] = currency_massiv[currency_massiv.index('Value') + 1]
     return(exchange)
 
 if __name__=='__main__':
-    print(currency_rates())
+    currency = 'XDR'
+    date, value = currency_rates(currency).values()
+    print(f'Для валюты {currency} курс на {date} составляет {value}')
 
 
