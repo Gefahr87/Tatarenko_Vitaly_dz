@@ -25,7 +25,7 @@ def currency_rates():
     print(inform_content)
     massive = inform_content.split()
     print(massive)
-    exchange = dict(Date=massive)
+    exchange = dict(Date=massive[8])
     # k = 0
     # while k < len(massive):
     #     k +=1
