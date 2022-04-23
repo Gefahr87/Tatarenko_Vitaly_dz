@@ -11,25 +11,31 @@ str, решить поставленную задачу? Функция долж
 функции не зависящей от того, в каком регистре был передан аргумент? В качестве примера
 выведите курсы доллара и евро.
 '''
-import requests
+import datetime
 
-def currency_rates(currency):
+import requests
+import datetime as dt
+import time
+
+def currency_rates(argv):
+    _, *currency = argv
     req_answer = requests.get('http://www.cbr.ru/scripts/XML_daily.asp')
     sym = ['<', '>', '"', '?', '=', '/', "'"]
     inform_content = str(req_answer.content)
-    a = len(inform_content)
-    for i in range(a):
-        for j in range(len(sym)):
-            inform_content = inform_content.replace(sym[j], '  ')
+    for i in range(len(sym)):
+        inform_content = inform_content.replace(sym[i], '  ')
     massive = inform_content.split()
-    exchange = dict(Date=massive[massive.index('Date') + 1])
-    currency_massiv = massive[massive.index(currency): - 1]
-    exchange[currency] = currency_massiv[currency_massiv.index('Value') + 1]
-    return(exchange)
+    exchange = dict(Date = massive[massive.index('Date') + 1])
+    for j in range(len(currency)):
+        currency_massiv = massive[massive.index(currency[j]): - 1]
+        exchange[currency[j]] = currency_massiv[currency_massiv.index('Value') + 1]
+    print(exchange)
+    date_req, *value = exchange.values()
+    dd, mm, year = list(map(int, date_req.split('.')))
+    for i in range(len(currency)):
+        print(f'Для валюты {currency[i]} курс на {datetime.date(year, mm, dd)} составляет {value[i]}')
+    return 0
 
 if __name__=='__main__':
-    currency = 'XDR'
-    date, value = currency_rates(currency).values()
-    print(f'Для валюты {currency} курс на {date} составляет {value}')
-
-
+    import sys
+    exit(currency_rates(sys.argv))
