@@ -18,4 +18,3 @@ if __name__ == "__main__":
     result = gen_of_interstage(num)
     for _ in range(num):
         print(next(result))
-
