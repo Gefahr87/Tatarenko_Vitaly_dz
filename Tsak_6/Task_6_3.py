@@ -14,6 +14,7 @@
 скалолазание,охота
 горные лыжи
 '''
+
 import random
 import sys
 
