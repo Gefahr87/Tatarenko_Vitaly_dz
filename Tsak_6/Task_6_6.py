@@ -31,7 +31,6 @@ python show_sales.py 1 3
 
 import sys
 
-
 def sales_add(*total):
     with open('sale.txt', 'a', encoding='utf-8') as f:
         for el in total:

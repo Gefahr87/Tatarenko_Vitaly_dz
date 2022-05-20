@@ -1,0 +1,7 @@
+RD #19
+SUB #10
+WR 9
+ADD #3
+WR @9
+CALL 006
+POP R4
