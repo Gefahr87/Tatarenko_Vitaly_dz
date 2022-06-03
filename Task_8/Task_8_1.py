@@ -43,4 +43,3 @@ for email in str_of_email.split():
         dict_of_email[result.group(0)] = {'user_name': user_name.group(), 'domain_name': domain_name.group()}
         print(email, '\n', dict_of_email[result.group(0)])
 print(i)
-
