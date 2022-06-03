@@ -54,7 +54,7 @@ class Handle(Stationery):
         cv2.imshow(self.title, text_salut)
         cv2.waitKey(0)
 
-image = cv2.imread('salyut_1.jpg')
+image = cv2.imread('salyut.jpg')
 resize_image = Stationery('Ресайзнем изображение', image)
 image = resize_image.draw()
 
