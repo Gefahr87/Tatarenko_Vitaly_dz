@@ -35,3 +35,4 @@ if __name__=='__main__':
     dd, mm, year = list(map(int, date_req.split('.')))
     print(f'Для валюты {currency} курс на {datetime.date(year, mm, dd)} составляет {value}')
     print(currency_rates(currency))
+

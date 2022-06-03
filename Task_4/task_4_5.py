@@ -39,3 +39,4 @@ def currency_rates(argv):
 if __name__=='__main__':
     import sys
     exit(currency_rates(sys.argv))
+

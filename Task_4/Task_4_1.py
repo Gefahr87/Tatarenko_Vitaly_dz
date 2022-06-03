@@ -12,3 +12,4 @@ pillow версии 7.1.1 (или другой, отличной от самой
 import PIL
 
 print('PIL', PIL.__version__)
+
