@@ -150,3 +150,29 @@ INSERT INTO `messages` (`id`, `from_user_id`, `to_user_id`, `txt`, `is_delivered
 INSERT INTO `messages` (`id`, `from_user_id`, `to_user_id`, `txt`, `is_delivered`, `creates_at`, `updated_at`) VALUES (NULL, 55, 323, 'Doloribus dolor quia illum eum ducimus. Explicabo ut qui magnam. Dolor illo in cum beatae. Sit nulla nostrum aspernatur eos.', 1, '1976-09-20 23:47:47', '1984-08-11 06:16:51');
 INSERT INTO `messages` (`id`, `from_user_id`, `to_user_id`, `txt`, `is_delivered`, `creates_at`, `updated_at`) VALUES (NULL, 324, 318, 'Delectus qui rerum ab placeat. Error in a ut porro et.', 0, '2018-08-08 23:28:37', '1987-10-25 14:03:45');
 INSERT INTO `messages` (`id`, `from_user_id`, `to_user_id`, `txt`, `is_delivered`, `creates_at`, `updated_at`) VALUES (NULL, 318, 319, 'Qui fugit eligendi sequi accusantium ea laudantium quia. Voluptatem quae ut quis ipsam sed. Ut earum sapiente nihil officiis ut repudiandae voluptas.', 1, '2018-02-25 23:18:18', '1998-07-04 07:52:12');
+
+INSERT INTO `post_access` (`id`, `type_access`) VALUES (DEFAULT, 'self');
+INSERT INTO `post_access` (`id`, `type_access`) VALUES (DEFAULT, 'friend');
+INSERT INTO `post_access` (`id`, `type_access`) VALUES (DEFAULT, 'close_friend');
+INSERT INTO `post_access` (`id`, `type_access`) VALUES (DEFAULT, 'everyone');
+
+INSERT INTO `post` (user_id, image_id, post_access_id) VALUES (1, 1, 2);
+INSERT INTO `post` (user_id, image_id, post_access_id) VALUES (2, 4, 3);
+INSERT INTO `post` (user_id, image_id, post_access_id) VALUES (1, 1, 2);
+INSERT INTO `post` (user_id, image_id, post_access_id) VALUES (333, 7, 1);
+INSERT INTO `post` (user_id, image_id, post_access_id) VALUES (329, 3, 3);
+INSERT INTO `post` (user_id, image_id, post_access_id) VALUES (1, 13, 4);
+INSERT INTO `post` (user_id, image_id, post_access_id) VALUES (320, 12, 3);
+INSERT INTO `post` (user_id, image_id, post_access_id) VALUES (333, 1, 4);
+INSERT INTO `post` (user_id, image_id, post_access_id) VALUES (327, 6, 2);
+INSERT INTO `post` (user_id, image_id, post_access_id) VALUES (319, 7, 4);
+INSERT INTO `post` (user_id, image_id, post_access_id) VALUES (329, 8, 2);
+INSERT INTO `post` (user_id, image_id, post_access_id) VALUES (2, 6, 1);
+INSERT INTO `post` (user_id, image_id, post_access_id) VALUES (321, 11, 2);
+INSERT INTO `post` (user_id, image_id, post_access_id) VALUES (55, 9, 3);
+INSERT INTO `post` (user_id, image_id, post_access_id) VALUES (1, 11, 1);
+INSERT INTO `post` (user_id, image_id, post_access_id) VALUES (2, 7, 4);
+INSERT INTO `post` (user_id, image_id, post_access_id) VALUES (2, 13, 4);
+INSERT INTO `post` (user_id, image_id, post_access_id) VALUES (326, 9, 1);
+INSERT INTO `post` (user_id, image_id, post_access_id) VALUES (330, 5, 3);
+INSERT INTO `post` (user_id, image_id, post_access_id) VALUES (2, 11, 3);
