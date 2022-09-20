@@ -24,11 +24,9 @@ def list_of_date(start: list = [2000, 1, 1], end: list = [2099, 12, 31], amount_
 
 image_id = list(range(1, 14))
 user_id = list(range(314, 334))
+[user_id.append(el) for el in (1, 2, 45, 55)]
 post_access = list(range(1, 5))
 gender = [f, m, x]
-
-
-[user_id.append(el) for el in (1, 2, 45, 55)]
 
 # print(rndm.sample(user_id, 20))
 # print(rndm.sample(image_id, 13))

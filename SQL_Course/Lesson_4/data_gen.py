@@ -39,7 +39,7 @@ def main():
 
             # insert data
             with connection.cursor() as cursor:
-                insert_query = "INSERT INTO `profiles_test` (user_id, gender, birthday, photo_id, city, country) VALUES (45, 'm', '2000-10-11', 7, 'Santa Cruz', 'Mexico');"
+                insert_query = "INSERT INTO `profiles_test` (user_id, gender, birthday, photo_id, city, country) VALUES (333, 'm', '2000-10-11', 7, 'Santa Cruz', 'Mexico');"
                 cursor.execute(insert_query)
                 connection.commit()
     #
