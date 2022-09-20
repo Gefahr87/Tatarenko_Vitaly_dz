@@ -177,3 +177,6 @@ INSERT INTO `post` (user_id, image_id, post_access_id) VALUES (326, 9, 1);
 INSERT INTO `post` (user_id, image_id, post_access_id) VALUES (330, 5, 3);
 INSERT INTO `post` (user_id, image_id, post_access_id) VALUES (2, 11, 3);
 
+/*
+ Заполнение таблицы profiles реализовал программой data_gen.py
+ */

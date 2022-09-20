@@ -1,7 +1,13 @@
 import pymysql
 from config import host, user, password, db_name
+from generate_random_list import image_id, user_id, post_access, gender, list_of_date, city, country
+from random import choice
 
 def main():
+    bth_day = []
+    for el in list_of_date(end=[2030, 12, 13], amount_date=50):
+        bth_day.append(str(el))
+
     try:
         connection = pymysql.connect(
             host=host,
@@ -25,8 +31,8 @@ def main():
 
             # create table
             with connection.cursor() as cursor:
-                cursor.execute("DROP TABLE IF EXISTS profiles_test;")
-                create_table_query = "CREATE TABLE profiles_test (" \
+                cursor.execute("DROP TABLE IF EXISTS profiles;")
+                create_table_query = "CREATE TABLE profiles (" \
                                 " user_id BIGINT UNSIGNED PRIMARY KEY," \
                                 " gender ENUM('f', 'm', 'x') NOT NULL," \
                                 " birthday DATE NOT NULL," \
@@ -37,59 +43,16 @@ def main():
                 cursor.execute(create_table_query)
                 print("Table profiles_test created successfully")
 
-            # insert data
-            with connection.cursor() as cursor:
-                insert_query = "INSERT INTO `profiles_test` (user_id, gender, birthday, photo_id, city, country) VALUES (333, 'm', '2000-10-11', 7, 'Santa Cruz', 'Mexico');"
-                cursor.execute(insert_query)
-                connection.commit()
-    #
-    #         # with connection.cursor() as cursor:
-    #         #     insert_query = "INSERT INTO `users` (name, password, email) VALUES ('Victor', '123456', 'victor@gmail.com');"
-    #         #     cursor.execute(insert_query)
-    #         #     connection.commit()
-    #         #
-    #         # with connection.cursor() as cursor:
-    #         #     insert_query = "INSERT INTO `users` (name, password, email) VALUES ('Oleg', '112233', 'olegan@mail.ru');"
-    #         #     cursor.execute(insert_query)
-    #         #     connection.commit()
-    #
-    #         # with connection.cursor() as cursor:
-    #         #     insert_query = "INSERT INTO `users` (name, password, email) VALUES ('Oleg', 'kjlsdhfjsd', 'ole2gan@mail.ru');"
-    #         #     cursor.execute(insert_query)
-    #         #     connection.commit()
-    #         #
-    #         # with connection.cursor() as cursor:
-    #         #     insert_query = "INSERT INTO `users` (name, password, email) VALUES ('Oleg', '889922', 'olegan3@mail.ru');"
-    #         #     cursor.execute(insert_query)
-    #         #     connection.commit()
-    #
-    #         # update data
-    #         # with connection.cursor() as cursor:
-    #         #     update_query = "UPDATE `users` SET password = 'xxxXXX' WHERE name = 'Oleg';"
-    #         #     cursor.execute(update_query)
-    #         #     connection.commit()
-    #
-    #         # delete data
-    #         # with connection.cursor() as cursor:
-    #         #     delete_query = "DELETE FROM `users` WHERE id = 5;"
-    #         #     cursor.execute(delete_query)
-    #         #     connection.commit()
-    #
-    #         # drop table
-    #         # with connection.cursor() as cursor:
-    #         #     drop_table_query = "DROP TABLE `users`;"
-    #         #     cursor.execute(drop_table_query)
-    #
-    #         # select all data from table
-    #         with connection.cursor() as cursor:
-    #             select_all_rows = "SELECT * FROM `users`"
-    #             cursor.execute(select_all_rows)
-    #             # cursor.execute("SELECT * FROM `users`")
-    #             rows = cursor.fetchall()
-    #             for row in rows:
-    #                 print(row)
-    #             print("#" * 20)
-    #
+           # insert data
+            for usr_id in user_id:
+                with connection.cursor() as cursor:
+                    insert_query = f"INSERT INTO `profiles` (user_id, gender, birthday, photo_id, city, country)" \
+                                   f" VALUES ({usr_id}, '{choice(gender)}', '{choice(bth_day)}', {choice(image_id)}," \
+                                   f" '{choice(city)}', '{choice(country)}');"
+                    cursor.execute(insert_query)
+                    connection.commit()
+            print("Data insert successfully")
+
         finally:
             connection.close()
 
