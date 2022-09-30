@@ -1,7 +1,6 @@
 import random as rndm
 import datetime
 
-
 ##################################### Вычсление случайной даты в диапозоне #############################################
 def list_of_date(start: list = [2000, 1, 1], end: list = [2099, 12, 31], amount_date: int = 20) -> list:
     list_of_random_date = []
