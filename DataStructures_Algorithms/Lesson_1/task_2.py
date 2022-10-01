@@ -16,7 +16,7 @@
 -- проставьте сложности каждого выражения в двух ваших алгоритмах
 """
 
-def min_Oquadr (lst_obj: list) -> 'dict of index & value min element':
+def min_Olinear (lst_obj: list) -> 'dict of index & value min element':
     res = dict.fromkeys(['index_min_el', 'value_min_el', 'sorted_lst'])
     res['value_min_el'] = lst_obj[0]
     for i in range(len(lst_obj) - 1):
