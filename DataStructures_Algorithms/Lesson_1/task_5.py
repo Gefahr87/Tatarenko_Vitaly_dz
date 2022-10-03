@@ -17,3 +17,12 @@
 --создание нового стопки можно реализовать добавлением нового пустого массива
 в массив стопок (lst = [[], [], [], [],....]).
 """
+
+class staroge:
+    def __int__(self):
+        self.closet = []
+        self.number_of_late = 10
+
+    def onemore(self, plat):
+        if self.closet is False:
+            self.closet.append(plat)
