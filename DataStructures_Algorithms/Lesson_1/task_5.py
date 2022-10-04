@@ -18,18 +18,27 @@
 в массив стопок (lst = [[], [], [], [],....]).
 """
 
+from RandomWordGenerator import RandomWord
 
-class staroge:
-    def __int__(self):
-        self.closet = []
-        self.number_of_late = 10
+class Storage():
 
-    def onemore(self, plat=123):
-        print(self.closet)
-        if self.closet is False:
-            self.closet.append(plat)
+    def __init__(self, number_of_stck: int, number_plate_in_stck: int):
+        self.stack = []
+        self.number_plate_in_stck = number_plate_in_stck
+        for _ in range(number_of_stck):
+            self.stack.append([])
 
+    def onemore(self, plat):
+        for i in range(len(self.stack)):
+            if len(self.closet[i]) < self.number_plate_in_stck:
+                self.closet[i].append(plat)
+            # else:
+            #     self.closet[i+1].append(plat)
+        return
 
 if __name__ == '__main__':
-    plat_1 = staroge
-    plat_1.onemore('red plate')
+    word = RandomWord(max_word_size=5, constant_word_size=False, include_digits=True)
+    tableware = Storage(3, 10)
+    for _ in range(40):
+        tableware.onemore(word.generate())
+    print(*tableware.closet, sep='\n')
