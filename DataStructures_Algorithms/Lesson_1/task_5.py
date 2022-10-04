@@ -30,15 +30,26 @@ class Storage():
 
     def onemore(self, plat):
         for i in range(len(self.stack)):
-            if len(self.closet[i]) < self.number_plate_in_stck:
-                self.closet[i].append(plat)
-            # else:
-            #     self.closet[i+1].append(plat)
-        return
+            if len(self.stack[i]) < self.number_plate_in_stck:
+                self.stack[i].append(plat)
+                return
+        return print('Все полки заполнены')
+
+    def take(self, stck):
+        if stck <= len(self.stack):
+            return self.stack[stck-1].pop()
+        else:
+            return print('Не в том шкафу ищешь!')
+
 
 if __name__ == '__main__':
     word = RandomWord(max_word_size=5, constant_word_size=False, include_digits=True)
     tableware = Storage(3, 10)
-    for _ in range(40):
+    for _ in range(32):
         tableware.onemore(word.generate())
-    print(*tableware.closet, sep='\n')
+    print(*tableware.stack, sep='\n')
+    print(tableware.take(2))
+    print(tableware.take(3))
+    print(tableware.take(3))
+    print(tableware.take(1))
+    print(tableware.take(4))
