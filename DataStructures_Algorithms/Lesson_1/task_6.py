@@ -18,18 +18,17 @@
 Примечание: ПРОШУ ВАС ВНИМАТЕЛЬНО ЧИТАТЬ ЗАДАНИЕ!
 """
 
+
 class Task_meneger():
     new_task = []
     to_check_task = []
     done_task = []
-
 
     def __init__(self, number_task: int, status=None) -> 'quantity of task':
         #status: 'int: 1 - done, 2 - to_check'
         self.number_task = number_task
         self.status = status
         self.add_new()
-
 
     def add_new(self):
         Task_meneger.new_task.insert(0, self.number_task)

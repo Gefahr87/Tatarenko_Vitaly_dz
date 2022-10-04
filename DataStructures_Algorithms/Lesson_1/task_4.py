@@ -37,6 +37,7 @@ def user_verification_v1(login: str, passwrd: str, auth_dict: dict) -> bool:    
     print(f'Связка логин и пароль не существует для пользователя {login}')                          # O(1)
     return False                                                                                    # O(1)
 
+
 def user_verification_v2(login: str, passwrd: str, auth_dict: dict) -> bool:                        # O(n^2)
     for user, param in auth_dict.items():                                                           # O(n^2)
         flag = 0                                                                                    # O(1)
