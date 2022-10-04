@@ -18,11 +18,18 @@
 в массив стопок (lst = [[], [], [], [],....]).
 """
 
+
 class staroge:
     def __int__(self):
         self.closet = []
         self.number_of_late = 10
 
-    def onemore(self, plat):
+    def onemore(self, plat=123):
+        print(self.closet)
         if self.closet is False:
             self.closet.append(plat)
+
+
+if __name__ == '__main__':
+    plat_1 = staroge
+    plat_1.onemore('red plate')
