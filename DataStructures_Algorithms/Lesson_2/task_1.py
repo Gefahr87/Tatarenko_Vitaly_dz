@@ -54,6 +54,7 @@ def check_number(is_it_number: str) -> int or str:
     except ValueError:
         return print('Вы ввели не число')
 
+
 def calc(number_1: str, number_2: str, operation: str) -> int or str:
     if operation == '+':
         return custom_sum(number_1, number_2)
@@ -66,6 +67,7 @@ def calc(number_1: str, number_2: str, operation: str) -> int or str:
     else:
         return 'Такая операция не продусмотрена'
 
+
 def main():
     operation = input('Введите операцию (+, -, *, / или 0 для выхода):')
     if operation == '0':
@@ -75,6 +77,7 @@ def main():
         number_2 = check_number(input('Введите второе число:'))
         print(calc(number_1, number_2, operation))
     return main()
+
 
 if __name__ == '__main__':
     main()
