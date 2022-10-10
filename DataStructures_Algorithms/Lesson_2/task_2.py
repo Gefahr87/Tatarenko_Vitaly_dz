@@ -19,8 +19,6 @@
 """
 
 
-
-
 def even_odd_numbers(number: int, ln: int) -> list:
     if ln == 1:
         return ev_odd_lst

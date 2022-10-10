@@ -11,6 +11,7 @@
 Нужно обойтисть без создания массива!
 """
 
+
 def sum_n_element(amount: int, row, sum_element) -> int:
     if amount == 1:
         return sum_element

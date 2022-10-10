@@ -19,3 +19,22 @@
 
 Допускается исп-е встроенных ф-ций
 """
+
+
+def ascii_code(start_code: int, end_code: int, list_code=[]):
+    if start_code == end_code:
+        list_code.append(f'{start_code:4d} - {chr(start_code)}')
+        return list_code
+    else:
+        list_code.append(f'{start_code:4d} - {chr(start_code)}')
+        return ascii_code(start_code + 1, end_code, list_code)
+
+
+def print_10_code(list_of_code, number_of_group=0):
+    if number_of_group > int(len(list_of_code) / 10):
+        return print(*list_of_code[number_of_group * 10:])
+    print(*list_of_code[number_of_group * 10: number_of_group * 10 + 10])
+    return print_10_code(list_of_code, number_of_group + 1)
+
+if __name__ == '__main__':
+    print_10_code(ascii_code(32, 127))
