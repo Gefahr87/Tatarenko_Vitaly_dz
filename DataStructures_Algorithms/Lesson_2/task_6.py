@@ -7,3 +7,20 @@
 
 Решите через рекурсию. В задании нельзя применять циклы.
 """
+from random import randint
+
+
+def guess(number: int, attempt=None) -> str:
+    attempt = int(input('Какое число было загадано?\n'))
+    if number == attempt:
+        return 'В точку!'
+    elif attempt > number:
+        print('Загаданное число меньше')
+    elif attempt < number:
+        print('Загаданное число больше')
+    return guess(number, attempt)
+
+
+if __name__ == '__main__':
+    number = randint(0, 100)
+    print(guess(number))
