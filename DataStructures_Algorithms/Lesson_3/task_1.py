@@ -28,3 +28,38 @@ b) получение элемента списка, оцените сложно
 обязательно реализуйте ф-цию-декоратор и пусть она считает время
 И примените ее к своим функциям!
 """
+
+
+import time
+from random import random
+
+def lenght_of_time(func):
+    def _wraper(*args):
+        start = time.perf_counter()
+        result = func(*args)
+        runtime = time.perf_counter() - start
+        print(f'Затраченное время на выполнение: {runtime}')
+        return result
+    return _wraper
+
+
+@lenght_of_time
+def dict_of_random(dct: dict, lenght: int) -> list:
+    for _ in range(lenght):
+        value = random()*100
+        dct[int(value)] = value
+    return dct
+
+
+@lenght_of_time
+def list_of_random(lst: list, lenght: int) -> list:
+    for _ in range(lenght):
+        element = int(random()*100)
+        lst.append(element)
+    return lst
+
+
+
+if __name__ == '__main__':
+    lst = list_of_random([], 100)
+    dct = dict_of_random({}, 100)
