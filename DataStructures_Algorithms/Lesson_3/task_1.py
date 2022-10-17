@@ -33,6 +33,7 @@ b) получение элемента списка, оцените сложно
 import time
 from random import random
 
+
 def lenght_of_time(func):
     def _wraper(*args):
         start = time.perf_counter()
@@ -43,6 +44,7 @@ def lenght_of_time(func):
     return _wraper
 
 
+"""a) заполняем словарь и список значениями и замеряем время выполнения"""
 @lenght_of_time
 def gen_dict_of_random(dct: dict, lenght: int) -> list:
     for _ in range(lenght):
@@ -57,7 +59,10 @@ def gen_list_of_random(lst: list, lenght: int) -> list:
         element = int(random()*100)
         lst.append(element)
     return lst
+##########################################################################
 
+
+"""b) чтение словаря и списка"""
 @lenght_of_time
 def read_dict(dct: dict, key):
     if key in dct.keys():
@@ -66,8 +71,20 @@ def read_dict(dct: dict, key):
         return print(f'нет {key=}')
 
 
+@lenght_of_time
+def read_list(lst: list, number_of_element: int):
+    if len(lst) > number_of_element:
+        return print(f'На позиции {number_of_element} есть элемент = {lst[number_of_element]}')
+    else:
+        return print(f'нет элемента с порядковым номером {number_of_element}')
+##########################################################################
+
+
+"""c) удаление элемента словаря и списка"""
+
 if __name__ == '__main__':
     lst = gen_list_of_random([], 100)
     dct = gen_dict_of_random({}, 100)
     read_dict(dct, 20)
+    read_list(lst, 99)
 
