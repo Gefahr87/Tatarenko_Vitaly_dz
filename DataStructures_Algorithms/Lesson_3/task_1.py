@@ -44,7 +44,7 @@ def lenght_of_time(func):
 
 
 @lenght_of_time
-def dict_of_random(dct: dict, lenght: int) -> list:
+def gen_dict_of_random(dct: dict, lenght: int) -> list:
     for _ in range(lenght):
         value = random()*100
         dct[int(value)] = value
@@ -52,14 +52,22 @@ def dict_of_random(dct: dict, lenght: int) -> list:
 
 
 @lenght_of_time
-def list_of_random(lst: list, lenght: int) -> list:
+def gen_list_of_random(lst: list, lenght: int) -> list:
     for _ in range(lenght):
         element = int(random()*100)
         lst.append(element)
     return lst
 
+@lenght_of_time
+def read_dict(dct: dict, key):
+    if key in dct.keys():
+        return print(f'по ключу {key=} есть значение {dct[key]}')
+    else:
+        return print(f'нет {key=}')
 
 
 if __name__ == '__main__':
-    lst = list_of_random([], 100)
-    dct = dict_of_random({}, 100)
+    lst = gen_list_of_random([], 100)
+    dct = gen_dict_of_random({}, 100)
+    read_dict(dct, 20)
+
