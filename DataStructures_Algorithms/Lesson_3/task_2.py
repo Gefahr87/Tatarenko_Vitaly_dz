@@ -22,3 +22,45 @@ f1dcaeeafeb855965535d77c55782349444b
 воспользуйтесь базой данный sqlite, postgres и т.д.
 п.с. статья на Хабре - python db-api
 """
+import pymysql
+from config import host, user, password, db_name
+
+try:
+    connection = pymysql.connect(
+        host=host,
+        port=3306,
+        user=user,
+        password=password,
+        database=db_name,
+        cursorclass=pymysql.cursors.DictCursor
+    )
+    print("successfully connected...")
+    print("#" * 20)
+
+    try:
+        cursor = connection.cursor()
+
+        # create DATABASE
+        with connection.cursor() as cursor:
+            create_database_query = "CREATE DATABASE IF NOT EXISTS Algorithm;"
+            cursor.execute(create_database_query)
+            print("DATABASE created successfully")
+
+        with connection.cursor() as cursor:
+            cursor.execute("DROP TABLE IF EXISTS users;")
+            create_table_query = "CREATE TABLE users (" \
+                                 " id SERIAL PRIMARY KEY," \
+                                 " login VARCHAR(255) COMMENT 'Логин пользователя'," \
+                                 " password_hash VARCHAR(60) COMMENT 'хэш-пароль пользователя'," \
+                                 " created_at DATETIME DEFAULT CURRENT_TIMESTAMP," \
+                                 " updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP" \
+                                 ") COMMENT 'Пользователи для авторизации';"
+            cursor.execute(create_table_query)
+            print("Table users created successfully")
+
+    finally:
+        connection.close()
+
+except Exception as ex:
+    print("Connection refused...")
+    print(ex)
