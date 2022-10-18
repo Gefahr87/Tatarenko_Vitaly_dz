@@ -25,7 +25,6 @@ f1dcaeeafeb855965535d77c55782349444b
 import pymysql
 from config import host, user, password, db_name
 import hashlib
-from binascii import hexlify
 
 '''
 ##################### - Инициализация БД и создание таблицы users - #####################
@@ -55,8 +54,8 @@ try:
             cursor.execute("DROP TABLE IF EXISTS users;")
             create_table_query = "CREATE TABLE users (" \
                                  " id SERIAL PRIMARY KEY," \
-                                 " login VARCHAR(255) COMMENT 'Логин пользователя'," \
-                                 " password_hash VARCHAR(326) COMMENT 'хэш-пароль пользователя'," \
+                                 " login VARCHAR(255) UNIQUE COMMENT 'Логин пользователя'," \
+                                 " password_hash VARCHAR(128) COMMENT 'хэш-пароль пользователя'," \
                                  " created_at DATETIME DEFAULT CURRENT_TIMESTAMP," \
                                  " updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP" \
                                  ") COMMENT 'Пользователи для авторизации';"
@@ -72,43 +71,96 @@ except Exception as ex:
 #########################################################################################
 '''
 
-def create_hash(login: str, password: str) -> str:
-    hash_obj = hashlib.sha256(password.encode('utf-8'))
+
+def init_mysql(func):
+    '''Подключение к БД'''
+    def _wraper(*args):
+        global connection
+        try:
+            connection = pymysql.connect(
+                host=host,
+                port=3306,
+                user=user,
+                password=password,
+                database=db_name,
+                cursorclass=pymysql.cursors.DictCursor
+            )
+            print("successfully connected to database...")
+            print("#" * 20)
+
+            result = func(*args)
+
+        except Exception as ex:
+            print("Connection to database refused...")
+            print(ex)
+        return result
+    return _wraper
+
+
+def create_hash(login: str, password: str) -> 'hash_sha256 & salt_hash_sha256':
+    '''Создание двух видов хэшей: без соли и с ней'''
+    hash_obj = hashlib.sha256(login.encode() + password.encode())
     hash_obj_salt = hashlib.pbkdf2_hmac(hash_name='sha256',
-                         password=password.encode('utf-8'),
-                         salt=login.encode('utf-8'),
-                         iterations=100000)
-    return hash_obj.hexdigest(), hexlify(hash_obj_salt)
+                                        password=password.encode(),
+                                        salt=login.encode(),
+                                        iterations=100000)
+    return hash_obj.hexdigest(), hash_obj_salt.hex()
 
-def write_hash_to_mysql(user: str, hash_password):
+
+@init_mysql
+def write_hash_to_mysql(user_to_write: str, hash_password: str):
     try:
-        connection = pymysql.connect(
-            host=host,
-            port=3306,
-            user=user,
-            password=password,
-            database=db_name,
-            cursorclass=pymysql.cursors.DictCursor
-        )
-        print("successfully connected...")
-        print("#" * 20)
-
+        with connection.cursor() as cursor:
+            insert_query = f"""INSERT INTO users (login, password_hash)
+             VALUES ('{user_to_write}', '{hash_password}');"""
+            cursor.execute(insert_query)
+            connection.commit()
+            print("Data write in database successfully")
+    except pymysql.IntegrityError:  # если пользователь уже есть в базе, то обновляем пароль
+        print('Duplicate user in database, starting upgrade data')
         try:
             with connection.cursor() as cursor:
-                insert_query = f"INSERT INTO users (login, password_hash) VALUES ({user}, {hash_password});"
+                insert_query = f"""UPDATE users SET password_hash = '{hash_password}'
+                 WHERE login = '{user_to_write}';"""
                 cursor.execute(insert_query)
                 connection.commit()
-                print("Data write successfully")
-        finally:
-            connection.close()
+                print("Data update in database successfully")
+        except Exception as ex:
+            print("Connection to database refused...")
+            print(ex)
     except Exception as ex:
-        print("Connection refused...")
+        print("Connection to database refused...")
         print(ex)
+    finally:
+        connection.close()
+
+
+@init_mysql
+def read_hash_from_mysql(user_to_search: str):
+    try:
+        with connection.cursor() as cursor:
+            insert_query = f"SELECT password_hash FROM users WHERE login = '{user_to_search}';"
+            cursor.execute(insert_query)
+            row = cursor.fetchall()
+            hash_password = row[0]['password_hash']
+    finally:
+        connection.close()
+    return hash_password
+
+
+def check_to_password(login: str, password_to_check: str):
+    if password_to_check == read_hash_from_mysql(login):
+        return 'Вы ввели правильный пароль'
+    else:
+        return 'Вы ввели неверный пароль'
 
 
 if __name__ == '__main__':
-    _, hash = create_hash('user.yser', 'supersuper')
-    print('user.yser', hash)
-    write_hash_to_mysql(user, str(hash))
-
-
+    login, passwrd = 'login1_from_user', input('Введите пароль: ')
+    hash, salt_hash = create_hash(login, passwrd)
+    print(f'Получен хэш по введённому паролю: {salt_hash}')
+    write_hash_to_mysql(login, salt_hash)
+    print(check_to_password(login,
+                            create_hash(login, input('Введите пароль еще раз для проверки: '))[1]
+                            )
+          )
