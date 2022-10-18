@@ -42,7 +42,7 @@ try:
 
         # create DATABASE
         with connection.cursor() as cursor:
-            create_database_query = "CREATE DATABASE IF NOT EXISTS Algorithm;"
+            create_database_query = "CREATE DATABASE IF NOT EXISTS Algorithms;"
             cursor.execute(create_database_query)
             print("DATABASE created successfully")
 
