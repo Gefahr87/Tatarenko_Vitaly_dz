@@ -22,3 +22,23 @@
 р
 а
 """
+
+import hashlib
+
+
+def create_hash(string: str) -> 'hash_sha256':
+    hash_obj = hashlib.sha256(string.encode())
+    return hash_obj.hexdigest()
+
+
+if __name__ == '__main__':
+    full_string = input('Введите строку: ')
+    multiple_trims = set()
+    for lenght_of_sumbol in range(len(full_string)):
+        next_symbol = 1
+        while True:
+            multiple_trims.add(create_hash(full_string[lenght_of_sumbol: next_symbol + lenght_of_sumbol]))
+            next_symbol += 1
+            if next_symbol == len(full_string): break
+    print(multiple_trims)
+    print(len(multiple_trims))
