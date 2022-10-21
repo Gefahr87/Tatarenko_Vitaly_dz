@@ -24,6 +24,7 @@
 """
 
 import hashlib
+from typing import Set
 
 
 def create_hash(string: str) -> 'hash_sha256':
@@ -33,11 +34,13 @@ def create_hash(string: str) -> 'hash_sha256':
 
 if __name__ == '__main__':
     full_string = input('Введите строку: ')
-    multiple_trims = set()
+    multiple_trims = dict()
     for lenght_of_sumbol in range(len(full_string)):
         next_symbol = 1
         while True:
-            multiple_trims.add(create_hash(full_string[lenght_of_sumbol: next_symbol + lenght_of_sumbol]))
+            trims = full_string[lenght_of_sumbol: next_symbol + lenght_of_sumbol]
+            hash_to_trims = create_hash(trims)
+            multiple_trims.update({trims: hash_to_trims})
             next_symbol += 1
             if next_symbol == len(full_string): break
     print(multiple_trims)

@@ -19,19 +19,33 @@ import hashlib
 
 
 class CashingWebUrl:
-    known_host = set()
+    known_host = dict()
     def __init__(self, url):
-        self.hash = (hashlib.sha512(url.encode())).hexdigest()
         self.url = url
-        CashingWebUrl.known_host.add(self.url)
-        CashingWebUrl.known_host[self.url] = self.hash
+        self.hash = (hashlib.pbkdf2_hmac(hash_name='sha512',
+                                        password=url.encode(),
+                                        salt=url[8:].encode(),
+                                        iterations=100000)).hex()
+        CashingWebUrl.known_host.update({self.url: self.hash})
+
+def check_known_url(url_to_check: str):
+    if url_to_check in CashingWebUrl.known_host:
+        return CashingWebUrl[url_to_check]
+    else:
+        return (hashlib.pbkdf2_hmac(hash_name='sha512',
+                                         password=url_to_check.encode(),
+                                         salt=url_to_check[8:].encode(),
+                                         iterations=100000)).hex()
+
 
 
 if __name__ == '__main__':
     yandex = CashingWebUrl('https://yandex.ru')
     yandex_map = CashingWebUrl('https://yandex.ru/maps/')
-    print(yandex.hash)
     print(CashingWebUrl.known_host)
+    print(CashingWebUrl.known_host['https://yandex.ru'])
+    check_known_url('https://yandex.ru')
+
 
 
 
