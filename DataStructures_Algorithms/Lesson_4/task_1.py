@@ -11,7 +11,7 @@
 
 ОБЯЗАТЕЛЬНО! Добавьте аналитику: что вы сделали и какой это принесло эффект
 """
-
+from timeit import Timer
 
 def func_1(nums):
     new_arr = []
@@ -19,3 +19,8 @@ def func_1(nums):
         if nums[i] % 2 == 0:
             new_arr.append(i)
     return new_arr
+
+
+if __name__ == '__main__':
+    nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+    print(Timer(stmt='func_1(nums)', setup="from __main__ import func_1", numbers=10000000))
