@@ -28,3 +28,27 @@
 Предприятия, с прибылью выше среднего значения: Рога
 Предприятия, с прибылью ниже среднего значения: Копыта
 """
+from collections import Counter
+
+
+class Company:
+
+    def __init__(self, name: str, lst_of_profit: list):
+        self.name = name
+        self.quart_profit = lst_of_profit
+        self.avg_profit = sum(lst_of_profit) / len(lst_of_profit)
+
+
+if __name__ == '__main__':
+    comp = []
+    # amount_of_company = int(input('Введите количество предприятий для расчета прибыли: '))
+    # for number_company in range(amount_of_company):
+    #     name = input('Введите название предприятия: ')
+    #     quart_profit = list(map(int, input('через пробел введите прибыль данного предприятия '
+    #                          'за каждый квартал(Всего 4 квартала): ').split()))
+    #     comp.append(Company(name, quart_profit))
+    comp.append(Company('Awesome', [11, 56, 56, 11]))
+    comp.append(Company('Great', [55, 44, 33, 22]))
+    counr_obj = Counter({cmp.name: cmp.avg_profit for cmp in comp}).most_common()
+    print((counr_obj[0][1] + counr_obj[1][1]) / 2)
+
