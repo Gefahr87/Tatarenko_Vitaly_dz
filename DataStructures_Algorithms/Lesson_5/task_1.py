@@ -46,17 +46,17 @@ class Company:
 if __name__ == '__main__':
     n = 0
     comp = []
-    # amount_of_company = int(input('Введите количество предприятий для расчета прибыли: '))
-    # for number_company in range(amount_of_company):
-    #     name = input('Введите название предприятия: ')
-    #     quart_profit = list(map(int, input('через пробел введите прибыль данного предприятия '
-    #                          'за каждый квартал(Всего 4 квартала): ').split()))
-    #     comp.append(Company(name, quart_profit))
-    comp.append(Company('Awesome', [235, 345634, 55, 235]))
-    comp.append(Company('Great', [345, 34, 543, 34]))
-    comp.append(Company('North', [213405, 15434, 5463, 30264]))
-    comp.append(Company('South', [3545, 364, 5843, 340]))
-    comp.append(Company('West', [13231, 304, 5453, 3499]))
+    amount_of_company = int(input('Введите количество предприятий для расчета прибыли: '))
+    for number_company in range(amount_of_company):
+        name = input('Введите название предприятия: ')
+        quart_profit = list(map(int, input('через пробел введите прибыль данного предприятия '
+                             'за каждый квартал(Всего 4 квартала): ').split()))
+        comp.append(Company(name, quart_profit))
+    # comp.append(Company('Awesome', [235, 345634, 55, 235]))
+    # comp.append(Company('Great', [345, 34, 543, 34]))
+    # comp.append(Company('North', [213405, 15434, 5463, 30264]))
+    # comp.append(Company('South', [3545, 364, 5843, 340]))
+    # comp.append(Company('West', [13231, 304, 5453, 3499]))
     countr_obj = Counter({cmp.name: cmp.year_profit for cmp in comp})
     print(countr_obj)
     avg_profit_of_companies = countr_obj.total() / Company.amount_of_companies
