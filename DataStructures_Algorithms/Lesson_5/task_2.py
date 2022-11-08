@@ -17,6 +17,8 @@ defaultdict(list)
 int(, 16)
 reduce
 
+Counter.update([iterable-or-mapping]) - https://docs-python.ru/standart-library/modul-collections-python/klass-counter-modulja-collections/
+
 2) через ООП
 
 вспомните про перегрузку методов
