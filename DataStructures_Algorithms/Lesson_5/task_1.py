@@ -28,18 +28,16 @@
 Предприятия, с прибылью выше среднего значения: Рога
 Предприятия, с прибылью ниже среднего значения: Копыта
 """
-from collections import Counter
+from collections import Counter, namedtuple
 
-
+#################################Вариант-1##########################################
 class Company:
-    amount_of_companies = 0
     common_profit = 0
 
     def __init__(self, name: str, lst_of_profit: list):
         self.name = name
         self.quart_profit = lst_of_profit
         self.year_profit = sum(lst_of_profit)
-        Company.amount_of_companies += 1
         Company.common_profit += self.year_profit
 
 
@@ -52,17 +50,32 @@ if __name__ == '__main__':
         quart_profit = list(map(int, input('через пробел введите прибыль данного предприятия '
                              'за каждый квартал(Всего 4 квартала): ').split()))
         comp.append(Company(name, quart_profit))
-    # comp.append(Company('Awesome', [235, 345634, 55, 235]))
-    # comp.append(Company('Great', [345, 34, 543, 34]))
-    # comp.append(Company('North', [213405, 15434, 5463, 30264]))
-    # comp.append(Company('South', [3545, 364, 5843, 340]))
-    # comp.append(Company('West', [13231, 304, 5453, 3499]))
     countr_obj = Counter({cmp.name: cmp.year_profit for cmp in comp})
-    print(countr_obj)
-    avg_profit_of_companies = countr_obj.total() / Company.amount_of_companies
+    avg_profit_of_companies = countr_obj.total() / amount_of_company
     above_avarage = {cmp.name for cmp in comp if cmp.year_profit > avg_profit_of_companies}
     below_avarage = {cmp.name for cmp in comp if cmp.year_profit < avg_profit_of_companies}
     print(f'Средняя годовая прибыль всех предприятий: {avg_profit_of_companies}')
     print(f'Предприятия, с прибылью выше среднего значения: {above_avarage}')
     print(f'Предприятия, с прибылью ниже среднего значения: {below_avarage}')
+####################################################################################
 
+#################################Вариант-2##########################################
+    comp = []
+    common_profit = 0
+    amount_of_company = int(input('Введите количество предприятий для расчета прибыли: '))
+    PROFIT_STAT = namedtuple('quart_profit', 'name q1 q2 q3 q4 year_profit')
+    for number_company in range(amount_of_company):
+            name = input('Введите название предприятия: ')
+            quart_profit = list(map(int, input('через пробел введите прибыль данного предприятия '
+                                 'за каждый квартал(Всего 4 квартала): ').split()))
+            year_profit = sum(quart_profit)
+            common_profit += year_profit
+            comp.append(PROFIT_STAT(name=name,
+                                    q1=quart_profit[0], q2=quart_profit[1], q3=quart_profit[2], q4=quart_profit[3],
+                                    year_profit=year_profit))
+    avg_profit_of_companies = common_profit / amount_of_company
+    above_avarage = {cmp.name for cmp in comp if sum(cmp[1:]) > avg_profit_of_companies}
+    below_avarage = {cmp.name for cmp in comp if sum(cmp[1:]) < avg_profit_of_companies}
+    print(f'Средняя годовая прибыль всех предприятий: {avg_profit_of_companies}')
+    print(f'Предприятия, с прибылью выше среднего значения: {above_avarage}')
+    print(f'Предприятия, с прибылью ниже среднего значения: {below_avarage}')
