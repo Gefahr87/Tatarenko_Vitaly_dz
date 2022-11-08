@@ -25,4 +25,12 @@ __mul__
 __add__
 """
 
-print(format(465, 'X'))
+if __name__ == "__main__":
+    x_1 = 'A2'
+    x_2 = 'C4F'
+    lst_x_1 = list(x_1)
+    lst_x_2 = list(x_2)
+    print(f"{lst_x_1=}, {lst_x_2}")
+    print(int(x_1, 16), int(x_2, 16))
+    proizved = int(x_1, 16) * int(x_2, 16)
+    print(hex(proizved))
