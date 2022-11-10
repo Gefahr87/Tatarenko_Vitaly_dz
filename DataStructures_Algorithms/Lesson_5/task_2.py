@@ -26,6 +26,12 @@ Counter.update([iterable-or-mapping]) - https://docs-python.ru/standart-library/
 __mul__
 __add__
 """
+from collections import defaultdict
+
+
+def sum_mul_hex(hex_1: str, hex_2:str):
+    combine_hex = defaultdict(list)
+
 
 if __name__ == "__main__":
     x_1 = 'A2'
