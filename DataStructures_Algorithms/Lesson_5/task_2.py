@@ -27,10 +27,18 @@ __mul__
 __add__
 """
 from collections import defaultdict
+from functools import reduce
 
 
-def sum_mul_hex(hex_1: str, hex_2:str):
-    combine_hex = defaultdict(list)
+def sum_mul_hex(hex_1: str, hex_2: str):
+    combine_hex = defaultdict(str)
+    max_len = max(len(hex_1), len(hex_2))
+    for k in max_len:
+
+        combine_hex[k] += int(k, 16)
+    sum_hex = reduce(lambda x, y: int(x, 16) + int(y, 16), dict_hex_1)
+    return sum_hex
+
 
 
 if __name__ == "__main__":
@@ -42,3 +50,4 @@ if __name__ == "__main__":
     print(int(x_1, 16), int(x_2, 16))
     proizved = int(x_1, 16) * int(x_2, 16)
     print(hex(proizved))
+    print('Вызываем функцию: ', sum_mul_hex(lst_x_1, lst_x_2))
