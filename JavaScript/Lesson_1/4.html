@@ -28,7 +28,12 @@
 <script>
   "use strict";
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
+  const man_number = prompt('Какое число исследуем?');
+  const amount_units = man_number % 10;
+  const amount_tens = Math.trunc(man_number / 10) % 10;
+  const amount_hundred = Math.trunc(man_number / 100) % 10;
+  console.log(`В числе ${man_number} колчество сотен: ${amount_hundred}, ` +
+   `десятков: ${amount_tens}, единиц: ${amount_units}`);
 </script>
 </body>
 </html>
