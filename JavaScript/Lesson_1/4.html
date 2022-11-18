@@ -28,12 +28,12 @@
 <script>
   "use strict";
 
-  const man_number = prompt('Какое число исследуем?');
-  const amount_units = man_number % 10;
-  const amount_tens = Math.trunc(man_number / 10) % 10;
-  const amount_hundred = Math.trunc(man_number / 100) % 10;
-  console.log(`В числе ${man_number} колчество сотен: ${amount_hundred}, ` +
-   `десятков: ${amount_tens}, единиц: ${amount_units}`);
+  const manNumber = +prompt('Какое число исследуем?');
+  const amountUnits = manNumber % 10;
+  const amountTens = Math.trunc(manNumber / 10) % 10;
+  const amountHundred = Math.trunc(manNumber / 100) % 10;
+  console.log(`В числе ${manNumber} колчество сотен: ${amountHundred}, ` +
+   `десятков: ${amountTens}, единиц: ${amountUnits}`);
 </script>
 </body>
 </html>
