@@ -20,6 +20,7 @@
 
 from RandomWordGenerator import RandomWord
 
+
 class Storage():
 
     def __init__(self, number_of_stck: int, number_plate_in_stck: int):

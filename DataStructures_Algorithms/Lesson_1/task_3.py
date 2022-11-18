@@ -17,6 +17,7 @@
 Примечание: ПРОШУ ВАС ВНИМАТЕЛЬНО ЧИТАТЬ ЗАДАНИЕ!
 """
 
+
 def version_1 (dict_of_company: dict) -> list:                                  # O(n)
     max_val, max_val_key = [], []                                               # O(1)
     i = 0                                                                       # 0(1)
@@ -27,6 +28,7 @@ def version_1 (dict_of_company: dict) -> list:                                  
         i += 1                                                                  # O(1)
     return list(zip(max_val, max_val_key))                                      # O(1)
 
+
 def version_2(dict_of_company: dict) -> dict:                                   # O(n^2)
     sorted_value = sorted(dict_of_company.values(), reverse=True)               # O(n log n)
     sorted_dict_of_3_company = {}                                               # O(1)
@@ -36,11 +38,13 @@ def version_2(dict_of_company: dict) -> dict:                                   
                 sorted_dict_of_3_company[key] = val                             # O(1)
     return sorted_dict_of_3_company                                             # O(1)
 
+
 if __name__ == '__main__':
     profit_of_company = {'company_1': 1546879, 'company_2': 852316, 'company_3': 55122231, 'company_3': 46546132,
                          'company_4': 46951326, 'company_5': 6461564}
     print(version_2(profit_of_company))
     print(version_1(profit_of_company))
+
 """
 Для решения задачи подходит первая version_1, сложность операций меньше по сравнению с version_2.
 В version_2 сложность квадратичная, и если даже избежать от вложенного цикла,
