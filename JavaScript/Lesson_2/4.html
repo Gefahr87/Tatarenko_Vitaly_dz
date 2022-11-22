@@ -31,7 +31,48 @@
 <script>
   "use strict";
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
+
+  console.log(summation(3, 99))
+  console.log(substraction(-5, 1))
+  console.log(multiplication(3, 99))
+  console.log(divide(3, 999))
+
+  /**
+   * Функция складывает два переданных числа
+   * @param {number} num1 Первое слагаемое число
+   * @param {number} num2 Второе слагаемое число
+   * @returns {number} Результат сложения
+   */
+  function summation (num1, num2) {return num1 + num2}
+
+    /**
+   * Функция вычитает из большего числа меньшее или ноль при их совпадении
+   * @param {number} num1 Первое уменьшаемое число
+   * @param {number} num2 Второе вычитаемое число
+   * @returns {number} Результат вычитания
+   */
+  function substraction (num1, num2) {
+    if (num1 > num2) {return num1 - num2}
+    else if (num2 > num1) {return num2 - num1}
+    else return 0;
+  }
+
+  /**
+   * Функция умножает два переданных числа
+   * @param {number} num1 Первый числовой множитель
+   * @param {number} num2 Второй числовой множитель
+   * @returns {number} Результат умножения
+   */
+  function multiplication (num1, num2) {return num1 * num2}
+
+    /**
+   * Функция делит два переданных числа
+   * @param {number} num1 Первое делимое число
+   * @param {number} num2 Второй числовой делитель
+   * @returns {number} Результат деления
+   */
+  function divide (num1, num2) {return num1 / num2}
+
 </script>
 </body>
 </html>

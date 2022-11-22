@@ -32,7 +32,63 @@ Infinity делать не нужно, однако, в случае если б
 <script>
   "use strict";
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
+  const num1 = Number(prompt('Введите первое число'))
+  const num2 = Number(prompt('Введите второе число'))
+  const opertn = prompt('Что сделать с числами? Введите один из символов "+", "-", "*", "/"')
+
+  console.log(mathOperation(num1, num2, opertn))
+
+  /**
+   * Функция складывает два переданных числа
+   * @param {number} num1 Первое слагаемое число
+   * @param {number} num2 Второе слагаемое число
+   * @returns {number} Результат сложения
+   */
+  function summation (num1, num2) {return num1 + num2}
+
+  /**
+   * Функция вычитает из большего числа меньшее или ноль при их совпадении
+   * @param {number} num1 Первое уменьшаемое число
+   * @param {number} num2 Второе вычитаемое число
+   * @returns {number} Результат вычитания
+   */
+  function substraction (num1, num2) {
+    if (num1 > num2) {return num1 - num2}
+    else if (num2 > num1) {return num2 - num1}
+    else return 0;
+  }
+
+  /**
+   * Функция умножает два переданных числа
+   * @param {number} num1 Первый числовой множитель
+   * @param {number} num2 Второй числовой множитель
+   * @returns {number} Результат умножения
+   */
+  function multiplication (num1, num2) {return num1 * num2}
+
+  /**
+   * Функция делит два переданных числа
+   * @param {number} num1 Первое делимое число
+   * @param {number} num2 Второй числовой делитель
+   * @returns {number} Результат деления
+   */
+  function divide (num1, num2) {return num1 / num2}
+
+
+  /**
+   * Функция вызывет другие функции по нужному действию с числами
+   * @param {number} arg1 Первое число
+   * @param {number} arg2 Второй число
+   * @returns {number} Результат выполнения нужно действия над числами
+   */
+  function mathOperation(arg1, arg2, operation) {
+    if (operation === '+') {return summation(arg1, arg2)}
+    else if (operation === '-') {return substraction(arg1, arg2)}
+    else if (operation === '*') {return multiplication(arg1, arg2)}
+    else if (operation === '/') {return divide(arg1, arg2)}
+    else return NaN
+  }
+
 </script>
 </body>
 </html>

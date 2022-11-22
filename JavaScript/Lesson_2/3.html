@@ -21,7 +21,21 @@
 <script>
   "use strict";
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
+  const a = Number(prompt('Ввелите первое число'));
+  const b = Number(prompt('Ввелите второе число'));
+
+  const result = resultAB(a, b);
+  if (result) {alert(result)};
+
+  function resultAB (a, b) {
+    if (a > 0 && b > 0) {
+      return a - b;
+    } else if (a < 0 && b < 0) {
+      return a * b;
+    } else if (a > 0 && b < 0 || a < 0 && b > 0) {
+      return a + b;
+    } else return;
+  }
 </script>
 </body>
 </html>
