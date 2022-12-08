@@ -50,7 +50,69 @@
 <script>
   "use strict";
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
+  function PostES5(author, text) {
+    this.author = author;
+    this.text = text;
+    this.date = new Date();
+  }
+
+  PostES5.prototype.edit = function () {
+    this.text = this.text.slice(0, this.text.length / 2) + '...';
+  };
+
+  const myFirstPost = new PostES5('Max', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, voluptas.')
+  myFirstPost.edit()
+
+  function AttachedPostES5(name, text) {
+    PostES5.call(this, name, text);
+    this.highlighted = false;
+  }
+
+  AttachedPostES5.prototype = Object.create(PostES5.prototype);
+  AttachedPostES5.prototype.constructor = AttachedPostES5;
+
+  AttachedPostES5.prototype.makeTextHighlighted = function () {
+    if (!this.highlighted) {
+      this.highlighted = true;
+    }
+  };
+
+  const postAttached = new
+                    AttachedPostES5('Max', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, voluptas.');
+  postAttached.makeTextHighlighted();
+
+  class PostES6 {
+    constructor(author, text) {
+      this.author = author;
+      this.text = text;
+      this.date = new Date();
+    }
+
+    edit() {
+      this.text = this.text.slice(0, this.text.length / 2) + '...';
+    }
+  }
+
+  const myFirstPost2 = new PostES6('Max', 'Lorem2 ipsum dolor sit amet, consectetur adipisicing elit. Quia, voluptas.')
+  myFirstPost2.edit()
+
+  class AttachedPostES6 extends PostES6 {
+    constructor(author, text) {
+      super(author, text);
+      this.highlighted = false;
+    }
+
+    makeTextHighlighted() {
+      if (!this.highlighted) {
+        this.highlighted = true;
+      }
+    }
+  }
+
+  const postAttached2 = new
+                    AttachedPostES6('Max', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, voluptas.');
+  postAttached2.makeTextHighlighted();
+
 </script>
 </body>
 </html>
