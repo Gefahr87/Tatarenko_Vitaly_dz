@@ -31,7 +31,30 @@
 <script>
   "use strict";
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
+  class DigitsOfNumber {
+    constructor(number) {
+      this.number = number;
+
+    }
+
+    /**
+     * Функция вычисляет количество единиц, десятков и сотен в числе
+     * @param {number} units - содержит число, количество единиц в параметре функции.
+     * @param {number} dozens - содержит число, количество десятков в параметре функции.
+     * @param {number} hundreds - содержит число, количество сотен в параметре функции.
+     * @returns {object} - объект со всеми данными
+     */
+    getDigitsOfNumber() {
+      this.units = this.number % 10;
+      this.dozens = Math.trunc(this.number / 10) % 10;
+      this.hundreds = Math.trunc(this.number / 100) % 10;
+      return this;
+    }
+  }
+
+  const num1 = new DigitsOfNumber(123);
+  console.log(num1.getDigitsOfNumber());
+
 </script>
 </body>
 </html>
