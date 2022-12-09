@@ -33,8 +33,11 @@
 
   class DigitsOfNumber {
     constructor(number) {
-      this.number = number;
-
+      if (Number.isInteger(number) && number >= 0 && number < 999) {
+        this.number = number;
+      } else {
+        console.info(`Неверное число ${number}`);
+      }
     }
 
     /**
