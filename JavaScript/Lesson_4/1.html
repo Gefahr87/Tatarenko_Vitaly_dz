@@ -26,7 +26,8 @@
   }
 
   ProductES5.prototype.make25Discount = function () {
-    console.log(`Цена товара ${this.name} со скидкой: ${this.price * 0.75}`);
+    this.price *= 0.75;
+    console.log(`Цена товара ${this.name} со скидкой: ${this.price}`);
   };
 
   const laptop = new ProductES5('yellowBig', 3000);
@@ -39,7 +40,8 @@
     }
 
     make25Discount() {
-      console.log(`Цена товара ${this.name} со скидкой: ${this.price * 0.75}`);
+      this.price *= 0.75;
+      console.log(`Цена товара ${this.name} со скидкой: ${this.price}`);
     }
   }
 

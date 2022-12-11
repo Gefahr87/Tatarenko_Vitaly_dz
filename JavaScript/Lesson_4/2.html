@@ -58,6 +58,7 @@
 
   PostES5.prototype.edit = function () {
     this.text = this.text.slice(0, this.text.length / 2) + '...';
+    this.date = new Date();
   };
 
   const myFirstPost = new PostES5('Max', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, voluptas.')
@@ -74,6 +75,7 @@
   AttachedPostES5.prototype.makeTextHighlighted = function () {
     if (!this.highlighted) {
       this.highlighted = true;
+      this.date = new Date();
     }
   };
 
@@ -90,6 +92,7 @@
 
     edit() {
       this.text = this.text.slice(0, this.text.length / 2) + '...';
+      this.date = new Date();
     }
   }
 
@@ -97,14 +100,12 @@
   myFirstPost2.edit()
 
   class AttachedPostES6 extends PostES6 {
-    constructor(author, text) {
-      super(author, text);
-      this.highlighted = false;
-    }
+      highlighted = false;
 
     makeTextHighlighted() {
       if (!this.highlighted) {
         this.highlighted = true;
+        this.date = new Date();
       }
     }
   }
