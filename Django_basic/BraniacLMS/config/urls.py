@@ -16,9 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from mainapp.views import index
+from mainapp import views
 
 urlpatterns = [
-    path('', index),
+    path('', views.index),
     path('admin/', admin.site.urls),
+    path('views/', views.hello_world),
+    path('<str:word>/', views.check_kwargs),
 ]
