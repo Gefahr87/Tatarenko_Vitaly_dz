@@ -2,10 +2,10 @@
 <project version="4">
   <component name="PublishConfigData" autoUpload="Always" serverName="gef@192.168.88.158:22 key" remoteFilesAllowedToDisappearOnAutoupload="false">
     <serverData>
-      <paths name="gef@192.168.88.158:22 agent">
+      <paths name="gef@192.168.1.221:22 key">
         <serverdata>
           <mappings>
-            <mapping deploy="/home/gef/Desktop/django_basic" local="$PROJECT_DIR$/../../Repo/Tatarenko_Vitaly_dz/Django_basic" />
+            <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
