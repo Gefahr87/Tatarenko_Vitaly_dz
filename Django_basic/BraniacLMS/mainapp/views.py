@@ -17,7 +17,7 @@ class MainPageView(TemplateView):
     template_name = 'mainapp/index.html'
 
 class NewsPageView(TemplateView):
-    template_name = 'mainapp/news.html'
+    template_name = "mainapp/news.html"
 
 class CoursesPageView(TemplateView):
     template_name = 'mainapp/courses_list.html'
