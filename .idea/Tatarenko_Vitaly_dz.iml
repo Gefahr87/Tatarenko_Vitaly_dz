@@ -16,7 +16,7 @@
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/Django_basic/venv" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.10 (Tatarenko_Vitaly_dz)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Remote Python 3.10.6 (/home/gef/Desktop/django_basic/bin/venv/bin/python3.10)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="PyDocumentationSettings">
