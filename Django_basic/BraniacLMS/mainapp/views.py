@@ -27,6 +27,7 @@ class NewsPageView(TemplateView):
         context[
             "news_preview"
         ] = "Предварительное описание, которое заинтересует каждого"
+        context["range"] = range(5)
         return context
 
 class CoursesPageView(TemplateView):
