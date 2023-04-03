@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from datetime import datetime
 from django.http import HttpResponse
 from django.views.generic import View, TemplateView
 
@@ -28,6 +29,7 @@ class NewsPageView(TemplateView):
             "news_preview"
         ] = "Предварительное описание, которое заинтересует каждого"
         context["range"] = range(5)
+        context["datetime_obj"] = datetime.now()
         return context
 
 class CoursesPageView(TemplateView):
