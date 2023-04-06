@@ -7,12 +7,11 @@ app_name = MainappConfig.name
 
 urlpatterns = [
     # path('', views.HelloWorldView.as_view()),
-    path('', views.MainPageView.as_view()),
-    path('index.html/', views.MainPageView.as_view()),
-    path('news.html/', views.NewsPageView.as_view()),
-    path('courses_list.html/', views.CoursesPageView.as_view()),
-    path('contacts.html/', views.ContactsPageView.as_view()),
-    path('doc_site.html/', views.DocSitePageView.as_view()),
-    path('login.html/', views.LoginPageView.as_view()),
+    path("", views.MainPageView.as_view(), name="main_page"),
+    path("news/", views.NewsPageView.as_view(), name="news"),
+    path("courses/", views.CoursesPageView.as_view(), name="courses"),
+    path("contacts/", views.ContactsPageView.as_view(), name="contacts"),
+    path("doc_site/", views.DocSitePageView.as_view(), name="doc_site"),
+    path("login/", views.LoginPageView.as_view(), name="login"),
     path('<str:word>/', views.check_kwargs),
 ]
