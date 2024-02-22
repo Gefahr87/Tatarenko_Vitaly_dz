@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="fe07bad2-49aa-471d-97f0-1d0ca23e5df4" name="Changes" comment="lesson_7 Logging" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="0a0d4600a4174f03df899cf8e7256f8e10015f56" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2KPtmslaQSzwTrg5WR06vaLDAmO" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.highlight.mappings&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.highlight.symlinks&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.date&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.permissions&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.size&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/Облако MailRu/TVV/Обучение/Python/Repo/Tatarenko_Vitaly_dz/Django_basic&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Облако MailRu\TVV\Обучение\Python\Repo\Tatarenko_Vitaly_dz\Django_basic\BraniacLMS" />
+      <recent name="F:\Облако MailRu\TVV\Обучение\Python\Repo\Tatarenko_Vitaly_dz\Django_basic\BraniacLMS\mainapp" />
+      <recent name="F:\Облако MailRu\TVV\Обучение\Python\Repo\Tatarenko_Vitaly_dz\Django_basic\BraniacLMS\config" />
+      <recent name="F:\Облако MailRu\TVV\Обучение\Python\Repo\Tatarenko_Vitaly_dz\Django_basic\BraniacLMS\static" />
+      <recent name="F:\Облако MailRu\TVV\Обучение\Python\Repo\Tatarenko_Vitaly_dz\Django_basic\BraniacLMS\mainapp\templates\mainapp" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Облако MailRu\TVV\Обучение\Python\Repo\Tatarenko_Vitaly_dz\Django_basic\BraniacLMS\authapp\templates\registration" />
+      <recent name="F:\Облако MailRu\TVV\Обучение\Python\Repo\Tatarenko_Vitaly_dz\Django_basic\BraniacLMS\mainapp\templates" />
+      <recent name="F:\Облако MailRu\TVV\Обучение\Python\Repo\Tatarenko_Vitaly_dz\Django_basic\BraniacLMS\mainapp" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.Django">
+    <configuration name="Djangj_local" type="PythonConfigurationType" factoryName="Python">
+      <module name="Tatarenko_Vitaly_dz" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="F:\Облако MailRu\TVV\Обучение\Python\Django_Basic\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Django_basic/BraniacLMS" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Django_basic/BraniacLMS/manage.py" />
+      <option name="PARAMETERS" value="runserver" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Django" type="PythonConfigurationType" factoryName="Python">
+      <module name="Tatarenko_Vitaly_dz" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Django_basic/BraniacLMS" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Django_basic/BraniacLMS/manage.py" />
+      <option name="PARAMETERS" value="runserver 0.0.0.0:8000" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.Django" />
+      <item itemvalue="Python.Djangj_local" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SshConsoleOptionsProvider">
+    <option name="myEncoding" value="UTF-8" />
+    <option name="myConnectionType" value="NONE" />
+    <option name="myConnectionId" value="" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fe07bad2-49aa-471d-97f0-1d0ca23e5df4" name="Changes" comment="" />
+      <created>1673888207844</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1673888207844</updated>
+      <workItem from="1673888209084" duration="5971000" />
+      <workItem from="1673901423737" duration="65000" />
+      <workItem from="1674284604487" duration="32000" />
+      <workItem from="1676384698182" duration="636000" />
+      <workItem from="1676890798524" duration="180000" />
+      <workItem from="1676892176607" duration="2356000" />
+      <workItem from="1677173536548" duration="4047000" />
+      <workItem from="1677499749601" duration="4434000" />
+      <workItem from="1677746233821" duration="13066000" />
+      <workItem from="1680852220429" duration="5070000" />
+      <workItem from="1681212389756" duration="3858000" />
+      <workItem from="1681230336446" duration="2153000" />
+      <workItem from="1681285600483" duration="6229000" />
+      <workItem from="1681717759415" duration="1269000" />
+      <workItem from="1683027011778" duration="11942000" />
+      <workItem from="1683138235529" duration="602000" />
+      <workItem from="1690194590873" duration="676000" />
+      <workItem from="1690293435184" duration="6283000" />
+      <workItem from="1690301821088" duration="1188000" />
+      <workItem from="1690824247963" duration="3347000" />
+      <workItem from="1690889833007" duration="3890000" />
+      <workItem from="1695290657524" duration="19950000" />
+      <workItem from="1695373159996" duration="5818000" />
+      <workItem from="1695729221525" duration="21162000" />
+      <workItem from="1695795919448" duration="2549000" />
+      <workItem from="1695827013594" duration="4863000" />
+      <workItem from="1695896687649" duration="34135000" />
+      <workItem from="1695967852795" duration="19581000" />
+      <workItem from="1696007355936" duration="2883000" />
+      <workItem from="1696342362863" duration="22674000" />
+      <workItem from="1696426493221" duration="2425000" />
+      <workItem from="1696695645140" duration="824000" />
+      <workItem from="1696859604860" duration="2729000" />
+      <workItem from="1696944775823" duration="4752000" />
+      <workItem from="1697449815766" duration="606000" />
+      <workItem from="1697716828320" duration="1955000" />
+      <workItem from="1698335719903" duration="6741000" />
+      <workItem from="1698420289583" duration="219000" />
+      <workItem from="1700508774855" duration="112000" />
+      <workItem from="1700512141087" duration="241000" />
+      <workItem from="1702295761454" duration="9010000" />
+    </task>
+    <task id="LOCAL-00001" summary="some changes">
+      <created>1673901456615</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1673901456615</updated>
+    </task>
+    <task id="LOCAL-00002" summary="some changes">
+      <created>1677702374683</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1677702374683</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Переж добавлением статичного сайта">
+      <created>1677749823998</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1677749823998</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Добавил статичные страница и стили">
+      <created>1677758059520</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1677758059520</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Добавил статичные страница и стили">
+      <created>1677759499790</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1677759499790</updated>
+    </task>
+    <task id="LOCAL-00006" summary="поправил адреса в на ссылки в другие страниццы">
+      <created>1677762281726</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1677762281726</updated>
+    </task>
+    <task id="LOCAL-00007" summary="fthsd">
+      <created>1680860031098</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1680860031098</updated>
+    </task>
+    <task id="LOCAL-00008" summary="fthsd">
+      <created>1680860094665</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1680860094665</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Video 39.42">
+      <created>1681230238005</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1681230238005</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Video 39.42 add msql_config">
+      <created>1681231475461</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1681231475461</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Video 39.42 return sql settings">
+      <created>1681327084648</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1681327084648</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Video 39.42 install mySQL">
+      <created>1681328484708</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1681328484708</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Video 39.42 install mySQL">
+      <created>1681328841007</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1681328841007</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Video 39.42 install mySQL">
+      <created>1681329064411</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1681329064411</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Video 39.42 install mySQL">
+      <created>1681329492534</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1681329492534</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Video 39.42 install mySQL">
+      <created>1681329677418</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1681329677418</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Video 57.55 install mySQL">
+      <created>1683028997917</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1683028997917</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Video 1.53.00 fixtures">
+      <created>1683034561413</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1683034561413</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Video 1.53.00 fixtures">
+      <created>1683034937483</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1683034937483</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Video part_2 06.46 fixtures">
+      <created>1683036223553</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1683036223553</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Video part_2 done">
+      <created>1683040524730</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1683040524730</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Video part_2 done">
+      <created>1695303221779</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1695303221779</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Video 36:20">
+      <created>1695311468378</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1695311468378</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Video 1:01:00">
+      <created>1695313857699</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1695313857699</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Video 1:14:00">
+      <created>1695315687685</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1695315687685</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Video 1:31:00">
+      <created>1695323915078</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1695323915079</updated>
+    </task>
+    <task id="LOCAL-00027" summary="lesson_5 Authapp done">
+      <created>1695325846883</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1695325846883</updated>
+    </task>
+    <task id="LOCAL-00028" summary="lesson_5 Authapp done 1:55">
+      <created>1695326278446</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1695326278446</updated>
+    </task>
+    <task id="LOCAL-00029" summary="lesson_5 GitHub auth Done">
+      <created>1695385698388</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1695385698388</updated>
+    </task>
+    <task id="LOCAL-00030" summary="lesson_5 git add . &amp;&amp; git commit -am &quot;lesson_6 Link to admin&quot;">
+      <created>1695731480024</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1695731480024</updated>
+    </task>
+    <task id="LOCAL-00031" summary="lesson_6 Customizing admin panel">
+      <created>1695740134968</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1695740134968</updated>
+    </task>
+    <task id="LOCAL-00032" summary="lesson_6 New user register form">
+      <created>1695745155729</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1695745155729</updated>
+    </task>
+    <task id="LOCAL-00033" summary="lesson_6 User edit form">
+      <created>1695753505172</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1695753505172</updated>
+    </task>
+    <task id="LOCAL-00034" summary="lesson_6 lesson_6 News CRUD and permissions">
+      <created>1695757981887</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1695757981887</updated>
+    </task>
+    <task id="LOCAL-00035" summary="lesson_6 Done Feedbacks with AJAX">
+      <created>1695762154032</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1695762154032</updated>
+    </task>
+    <task id="LOCAL-00036" summary="lesson_6 Hide be first">
+      <created>1695806972013</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1695806972013</updated>
+    </task>
+    <task id="LOCAL-00037" summary="lesson_7 Logging">
+      <created>1702307461020</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1702307461020</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="Lesson_7_django_basic" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="COLUMN_ID_WIDTH">
+                <map>
+                  <entry key="Table.Default.Author.ColumnIdWidth" value="67" />
+                  <entry key="Table.Default.Date.ColumnIdWidth" value="64" />
+                  <entry key="Table.Space.CommitStatus.ColumnIdWidth" value="53" />
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/Lesson_6_django_basic" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="поправил адреса в на ссылки в другие страниццы" />
+    <MESSAGE value="fthsd" />
+    <MESSAGE value="Video 39.42" />
+    <MESSAGE value="Video 39.42 add msql_config" />
+    <MESSAGE value="Video 39.42 return sql settings" />
+    <MESSAGE value="Video 39.42 install mySQL" />
+    <MESSAGE value="Video 57.55 install mySQL" />
+    <MESSAGE value="Video 1.53.00 fixtures" />
+    <MESSAGE value="Video part_2 06.46 fixtures" />
+    <MESSAGE value="Video part_2 done" />
+    <MESSAGE value="Video 36:20" />
+    <MESSAGE value="Video 1:01:00" />
+    <MESSAGE value="Video 1:14:00" />
+    <MESSAGE value="Video 1:31:00" />
+    <MESSAGE value="lesson_5 Authapp done" />
+    <MESSAGE value="lesson_5 Authapp done 1:55" />
+    <MESSAGE value="lesson_5 GitHub auth Done" />
+    <MESSAGE value="lesson_5 git add . &amp;&amp; git commit -am &quot;lesson_6 Link to admin&quot;" />
+    <MESSAGE value="lesson_6 Customizing admin panel" />
+    <MESSAGE value="lesson_6 New user register form" />
+    <MESSAGE value="lesson_6 User edit form" />
+    <MESSAGE value="lesson_6 lesson_6 News CRUD and permissions" />
+    <MESSAGE value="lesson_6 Done Feedbacks with AJAX" />
+    <MESSAGE value="lesson_6 Hide be first" />
+    <MESSAGE value="lesson_7 Logging" />
+    <option name="LAST_COMMIT_MESSAGE" value="lesson_7 Logging" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Tatarenko_Vitaly_dz$Django.coverage" NAME="Django Coverage Results" MODIFIED="1702301027664" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Django_basic/BraniacLMS" />
+    <SUITE FILE_PATH="coverage/Tatarenko_Vitaly_dz$Djangj_local.coverage" NAME="Djangj_local Coverage Results" MODIFIED="1702300124536" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Django_basic/BraniacLMS" />
+  </component>
+</project>

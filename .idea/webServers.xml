@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="6be1b80e-9ad4-4e98-955e-3456ed355eaf" name="AdminVPS_BraniacLMS">
+        <fileTransfer rootFolder="/home/django" accessType="SFTP" host="185.250.44.148" port="22" sshConfigId="98e69443-7857-46eb-89f0-43281c6fecb1" sshConfig="django@185.250.44.148:22 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
-from gef_mysql_config import db_host, db_user, db_password, db_name
+from .gef_mysql_config import db_host, db_user, db_password, db_name
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
